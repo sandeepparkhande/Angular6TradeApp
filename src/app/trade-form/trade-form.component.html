@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<form action="" method="POST" class="form-horizontal" role="form">
+    <div class="form-group">
+        <legend>Trade Request Form</legend>
+    </div>
+    <div class="input-group">
+        <div class="input-group"></div>
+    </div>
+
+    <div class="form-group">
+        <label for="input" class="col-sm-10 control-label">Name</label>
+        <div class="col-sm-10">
+            <input type="text" name="tradeName" id="input" class="form-control" value="" required="required" pattern="" title="" [(ngModel)]="trade.ticker" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="input" class="col-sm-10 control-label">Quantity</label>
+        <div class="col-sm-10">
+            <input type="text" name="tradeQuantity" id="input" class="form-control" value="" required="required" pattern="" title="" [(ngModel)]="trade.quantity" (change)="calculateTotal()" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="input" class="col-sm-10 control-labePrice">Price</label>
+        <div class="col-sm-10">
+            <input type="text" name="tradePrice" id="input" class="fPricerm-control" value="" required="required" pattern="" title="" [(ngModel)]="trade.price" (change)="calculateTotal()" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="input" class="col-sm-10 control-label">Total</label>
+        <div class="col-sm-10">
+            <input type="text" name="tradePriceTotal" id="input" class="formTotalcontrol" value="" required="required" disabled="true" pattern="" title="" [(ngModel)]="trade.total" />
+        </div>
+    </div>
+
+    <div class="formGroup">
+        <div class="btn-group mr-2">
+            <label for="input1" class="row-md-5">BSE</label>
+            <input type="radio" name="bseSensex" id="input1" class="row-md-auto" value="BSE" required="required" pattern="" title="" [(ngModel)]="trade.sensex" />
+        </div>
+        <div class="btn-group mr-2">
+            <label for="input2" class="row-md-5">NASDAQ</label>
+            <input type="radio" name="nasdaqSensex" id="input2" class="row-md-auto" value="NASDAQ" required="required" pattern="" title="" [(ngModel)]="trade.sensex" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="btn-group mr-2" role="group" aria-label="First group">
+            <button type="button" class="btn btn-primary" (click)="addTrade()">
+        Add Trade
+      </button>
+        </div>
+        <div class="btn-group mr-2" role="group" aria-label="Second group">
+            <button type="button" class="btn btn-primary" (click)="clearTrade()">
+        Clear
+      </button>
+        </div>
+    </div>
+</form>

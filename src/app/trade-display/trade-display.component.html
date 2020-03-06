@@ -1,0 +1,36 @@
+<div class="table-responsive-lg">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Total</th>
+        <th>Date</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let trade of tradeList">
+        <td>{{ trade.ticker }}</td>
+        <td>{{ trade.quantity }}</td>
+        <td>{{ trade.price }}</td>
+        <td>{{ trade.total }}</td>
+        <td>{{ trade.date }}</td>
+        <td>
+          <button type="button" class="btn btn-info btn-sm">EDIT</button>
+        </td>
+        <td>
+          <button
+            type="button"
+            class="btn btn-sm btn-block btn-danger "
+            (click)="deleteTrade(trade)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
